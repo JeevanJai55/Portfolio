@@ -57,4 +57,39 @@ var typed = new Typed(".multiple-text", {
     backSpeed: 100,
     backDelay: 1000,
     loop: true
+});
+
+var contac = document.getElementById("contact");
+
+contac.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // 
+
+  var username = document.getElementById("username");
+  var email = document.getElementById("email");
+  var phonenumber = document.getElementById("phonenumber");
+  var emailsub = document.getElementById("emailsub");
+  var message = document.getElementById("message"); 
+
+  if (username.value == "" || email.value == "" || phonenumber.value == "" || emailsub.value == "" || message.value == "") {
+    alert("Ensure you input a value in all fields!");
+  } else {
+    // perform operation with form input
+    alert("This form has been successfully submitted!");
+    console.log(
+      `This form has a username of ${username.value} and email of ${email.value} and phonenumber of ${phonenumber.value} and email subject of ${emailsub.value} and your message ${message.value}`
+    );
+    
+
+    username.value = "";
+    email.value = "";
+    phonenumber.value = "";
+    emailsub.value = "";
+    message.value = "";
+
+    
+  }
 })
+contac.reset();
+
+    
